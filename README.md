@@ -2,27 +2,27 @@
 
 ## テーブル設計
 ### users table
-|column|type|constraint|index|<br>
-|:--|--:|:--:|:--:|<br>
-|name|string|null&false, unique: true|◯|
+|column|type  |constraint              |index
+|:-----|:-----|:-----------------------|:---:
+|name  |string|null&false, unique: true|◯
 ### chat_groups table
-|column|type|constraint|index|<br>
-|:--|--:|:--:|:--:|<br>
-|name|string|null&false|-|
+|column|type|constraint|index
+|:--|:--|:--|:--:
+|name|string|null&false|-
 
 ### chat_group_users table
-|column|type|constraint|index|<br>
-|:--|--:|:--:|:--:|<br>
-|user_id|reference|foreign_key: true|◯|
-|chat_group_id|reference|foreign_key: true|◯|
+|column|type|constraint|index
+|:--|:--|:--|:--:
+|user_id|reference|foreign_key: true|◯
+|chat_group_id|reference|foreign_key: true|◯
 
 ### messages table
-|column|type|constraint|index|<br>
-|:--|--:|:--:|:--:|<br>
-|body|text|-|-|
-|image|string|-|-|
-|user_id|reference|foreign_key: true|◯|
-|chat_group_id|reference|foreign_key: true|◯|
+|column|type|constraint|index
+|:--|:--|:--|:--:
+|body|text|-|-
+|image|string|-|-
+|user_id|reference|foreign_key: true|◯
+|chat_group_id|reference|foreign_key: true|◯
 
 ## リレーション
 ### user
