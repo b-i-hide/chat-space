@@ -173,12 +173,9 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
   font-awesome-rails
-=======
   erb2haml
   haml-rails
->>>>>>> e85e59977a2efa7d97828c625033587a8428f132
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
