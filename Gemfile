@@ -52,3 +52,6 @@ gem 'font-awesome-sass'
 # import haml
 gem 'haml-rails'
 gem 'erb2haml'
+
+# devise
+gem 'devise'
