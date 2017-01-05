@@ -1,0 +1,42 @@
+.chat
+  %p.flash-message
+    チャットグループが作成されました。
+  .chat__sidebar
+    .chat__user
+      .chat__user--name
+        %p sample
+      .chat__user--actions
+        %a
+          %i.fa.fa-pencil-square-o(style="margin-right: 5px;")
+        %a
+          %i.fa.fa-cog
+    .chat__group-list
+      %p.chat__group-list--name sample1
+      %p.chat__group-list--latest-message sample_message1
+      %p.chat__group-list--name sample2
+      %p.chat__group-list--latest-message sample_message2
+  .chat__main
+    .chat__main--top
+      .group-info
+        %p.group-info__name sample group
+        %p.group-info__member-list members: gen
+      = link_to 'Edit','#' ,class: 'group_edit-button'
+    .chat__main--middle
+      .chat-contents
+        .chat-content
+          .message-info
+            %p.message-info__member-name gen
+            %p.message-info__posted-date 2016/01/01
+          .message-body
+            %p.message-body__content hello world
+        .chat-content(style="margin-bottom: 0;" )
+          .message-info
+            %p.message-info__member-name tsuji
+            %p.message-info__posted-date 2016/01/01
+          .message-body
+            %p.message-body__content goodbye world
+    %form.chat__main--bottom
+      %input{type: 'text', class: 'message-form', placeholder: 'type a message'}
+      %i.fa.fa-picture-o.file-field
+      -#%input{type: 'file', class: 'file-form fa fa-file-image-o'}
+      %input{type:'submit', class: 'submit-button', value: 'SEND'}

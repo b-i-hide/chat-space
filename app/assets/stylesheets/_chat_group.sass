@@ -1,0 +1,118 @@
+.chat
+  min-width: 960px
+  height: 100vh
+  .flash-message
+    background-color: $mainBlue
+    text-align: center
+    color: $mainWhite
+  &__sidebar
+    width: 300px
+    float: left
+    height: 100%
+    color: $mainWhite
+    .chat__user
+      background-color: #253141
+      height: 120px
+      padding: 0 20px
+      &--name
+        float: left
+        p
+          font-size: 16px
+          font-weight: bold
+          line-height: 120px
+      &--actions
+        float: right
+        i
+          line-height: 120px
+        .fa-pencil-square-o
+          margin-right: 5px
+    .chat__group-list
+      background-color: #2f3e51
+      padding-top: 20px
+      padding-left: 20px
+      padding-right: 20px
+      height: calc(100% - 140px)
+      &--name
+        font-size: 15px
+        padding-bottom: 5px
+      &--latest-message
+        font-size: 11px
+        padding-bottom: 40px
+  &__main
+    float: left
+    width: calc(100% - 300px)
+    height: 100%
+    .chat__main--top
+      border-bottom: solid 1px #eeeeee
+      height: 120px
+      padding-left: 40px
+      padding-right: 40px
+      .group-info
+        float: left
+        &__name
+          padding-top: 35px
+          padding-bottom: 15px
+          font-size: 20px
+          color: #333333
+        &__member-list
+          font-size: 12px
+          color: $fontGray
+      .group_edit-button
+        color: $mainBlue
+        border: solid 2px $mainBlue
+        height: 40px
+        padding: 0 20px
+        float: right
+        line-height: 40px
+        margin-top: 35px
+        text-decoration: none
+    .chat__main--middle
+      height: calc(100% - 211px)
+      position: relative
+      background-color: rgb(250, 250, 250)
+      .chat-contents
+        padding-top: 46px
+        padding-left: 40px
+        padding-right: 40px
+        .chat-content
+          margin-bottom: 40px
+          .message-info
+            padding-bottom: 10px
+            &__member-name
+              display: inline
+              font-size: 16px
+              font-weight: bold
+              color: #434A54
+              padding-right: 10px
+            &__posted-date
+              display: inline
+              font-size: 12px
+              color: $fontGray
+          .message-body
+            &__content
+              font-size: 14px
+              color: #434A54
+    .chat__main--bottom
+      background-color: rgb(221, 221, 221)
+      padding: 20px 40px
+      height: $formHeight
+      position: relative
+      .message-form
+        float: left
+        width: calc(100% - 130px)
+        line-height: $formHeight
+        padding-left: 10px
+        border: none
+      .file-field
+        position: absolute
+        top: 36px
+        left: 694px
+      input[type='submit']
+        float: left
+        width: 100px
+        line-height: $formHeight
+        display: inline-block
+        color: $mainWhite
+        background-color: $mainBlue
+        border: none
+        margin-left: 15px
