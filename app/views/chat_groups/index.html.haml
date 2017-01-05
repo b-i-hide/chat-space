@@ -8,7 +8,7 @@
       .chat__user--actions
         %a
           %i.fa.fa-pencil-square-o(style="margin-right: 5px;")
-        %a
+        %a(href="#{edit_user_registration_path}" )
           %i.fa.fa-cog
     .chat__group-list
       %p.chat__group-list--name sample1
@@ -36,7 +36,8 @@
           .message-body
             %p.message-body__content goodbye world
     %form.chat__main--bottom
-      %input{type: 'text', class: 'message-form', placeholder: 'type a message'}
-      %i.fa.fa-picture-o.file-field
-      -#%input{type: 'file', class: 'file-form fa fa-file-image-o'}
-      %input{type:'submit', class: 'submit-button', value: 'SEND'}
+      .chat__main--bottom-body
+        %input{type: 'text', class: 'message-form', placeholder: 'type a message'}
+        %i.fa.fa-picture-o.file-field
+        -#%input{type: 'file', class: 'file-form fa fa-file-image-o'}
+        %input{type:'submit', class: 'submit-button', value: 'SEND'}

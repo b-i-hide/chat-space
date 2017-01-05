@@ -22,6 +22,8 @@
           line-height: 120px
       &--actions
         float: right
+        a
+          color: $mainWhite
         i
           line-height: 120px
         .fa-pencil-square-o
@@ -95,24 +97,25 @@
     .chat__main--bottom
       background-color: rgb(221, 221, 221)
       padding: 20px 40px
-      height: $formHeight
-      position: relative
-      .message-form
-        float: left
-        width: calc(100% - 130px)
-        line-height: $formHeight
-        padding-left: 10px
-        border: none
-      .file-field
-        position: absolute
-        top: 36px
-        left: 694px
-      input[type='submit']
-        float: left
-        width: 100px
-        line-height: $formHeight
-        display: inline-block
-        color: $mainWhite
-        background-color: $mainBlue
-        border: none
-        margin-left: 15px
+      .chat__main--bottom-body
+        height: $formHeight
+        position: relative
+        .message-form
+          float: left
+          width: calc(100% - 130px)
+          line-height: $formHeight
+          padding-left: 10px
+          border: none
+        .file-field
+          position: absolute
+          top: 18px
+          right: 140px
+        input[type='submit']
+          float: left
+          width: 100px
+          line-height: $formHeight
+          display: inline-block
+          color: $mainWhite
+          background-color: $mainBlue
+          border: none
+          margin-left: 15px
