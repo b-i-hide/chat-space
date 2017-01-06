@@ -59,3 +59,6 @@ gem 'erb2haml'
 
 # devise
 gem 'devise'
+
+# use japanese
+gem 'rails-i18n'
