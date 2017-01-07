@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
         expect(user.errors[:email]).to include("を入力してください")
       end
 
-      it "is invalid to use same email" do
+      it "is invalid to use taken email" do
         user = create(:user, email: 'hoge@hoge.com')
         new_user = build(:user, email: 'hoge@hoge.com')
         new_user.valid?
@@ -40,7 +40,7 @@ RSpec.describe User, type: :model do
         expect(user.errors[:password]).to include("は6文字以上で入力してください")
       end
 
-      it "is same as password" do
+      it "is invalid if it is differnt from password" do
         user = build(:user, password: 00000000 ,password_confirmation: 11111111)
         user.valid?
         expect(user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
