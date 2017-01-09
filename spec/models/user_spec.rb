@@ -22,8 +22,8 @@ RSpec.describe User, type: :model do
       end
 
       it "is invalid to use taken email" do
-        user = create(:user, email: 'hoge@hoge.com')
-        new_user = build(:user, email: 'hoge@hoge.com')
+        user = create(:user)
+        new_user = build(:user, email: user.email)
         new_user.valid?
         expect(new_user.errors[:email]).to include("はすでに存在します")
       end
