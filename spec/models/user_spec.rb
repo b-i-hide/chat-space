@@ -34,8 +34,8 @@ RSpec.describe User, type: :model do
         expect(user.errors[:password]).to include("を入力してください")
       end
 
-      it "is invalid to use password less than 7 characters" do
-        user = build(:user, password: 0000000)
+      it "is invalid to use password less than 6 characters" do
+        user = build(:user, password: 00000)
         user.valid?
         expect(user.errors[:password]).to include("は6文字以上で入力してください")
       end
