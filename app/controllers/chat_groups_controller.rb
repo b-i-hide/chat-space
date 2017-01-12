@@ -25,7 +25,7 @@ class ChatGroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to root_path, notice: 'グループが編集されました'
     else
-      redirect_to edit_chat_group_path, alert: 'グループが編集されませんでした'
+      render action: :edit, alert: 'グループが編集されませんでした'
     end
   end
 
