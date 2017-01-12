@@ -63,3 +63,6 @@ gem 'devise'
 
 # use japanese
 gem 'rails-i18n'
+
+# pry-rails
+gem 'pry-rails'
