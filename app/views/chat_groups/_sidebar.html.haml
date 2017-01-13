@@ -14,4 +14,8 @@
         %a(href = "#{chat_group_messages_path(group)}")
           %p.chat__group--name
             = group.name
-          %p.chat__group--latest-message sample_message1
+          %p.chat__group--latest-message
+            - if group.messages.last
+              = group.messages.last.body
+            - else
+              まだメッセージがありません
