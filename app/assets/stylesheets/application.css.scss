@@ -1,7 +1,9 @@
-@import "reset";
-@import "./config/variables";
+@import "config/reset";
+@import "variables/variables";
+@import "config/settings";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "chat_group";
 @import "user";
 @import "config/flash";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import "group";

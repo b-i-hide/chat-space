@@ -2,23 +2,24 @@
   .chat__sidebar
     .chat__user
       .chat__user--name
-        %p sample
+        %p
+          = current_user.name
       .chat__user--actions
         %a
           %i.fa.fa-pencil-square-o(style="margin-right: 5px;")
         %a(href="#{edit_user_registration_path}" )
           %i.fa.fa-cog
     .chat__group-list
-      %p.chat__group-list--name sample1
-      %p.chat__group-list--latest-message sample_message1
-      %p.chat__group-list--name sample2
-      %p.chat__group-list--latest-message sample_message2
+      - @groups.each do |group|
+        %p.chat__group-list--name
+          = group.name
+        %p.chat__group-list--latest-message sample_message1
   .chat__main
     .chat__main--top
       .group-info
         %p.group-info__name sample group
         %p.group-info__member-list members: gen
-      = link_to 'Edit','#' ,class: 'group_edit-button'
+      = link_to 'Edit', '#', class: 'group_edit-button'
     .chat__main--middle
       .chat-contents
         .chat-content
