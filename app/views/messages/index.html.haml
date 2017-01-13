@@ -1,0 +1,34 @@
+.chat
+  = render partial: 'chat_groups/sidebar', object: @groups
+  .chat__main
+    .chat__main--top
+      .group-info
+        %p.group-info__name
+          = @group.name
+        %p.group-info__member-list
+          Members :
+          - @group.users.each do |user|
+            = "#{user.name}"
+      = link_to 'Edit', edit_chat_group_path(@group), class: 'group_edit-button'
+    .chat__main--middle
+      .chat-contents
+        .chat-content
+          - @messages.each do |message|
+            .message-info
+              %p.message-info__member-name
+                = message.user.name
+              %p.message-info__posted-date
+                = message.posted_date_format
+            .message-body(style="margin-bottom: 40px;" )
+              %p.message-body__content
+                = message.body
+    .chat__main--bottom
+      = form_for @message, url: {action: :create} do |f|
+        = f.hidden_field :user_id, value: current_user.id
+        = f.hidden_field :chat_group_id, value: @group.id
+        .chat__main--bottom-body
+          = f.text_field :body, class: 'message-form', placeholder: 'type a message'
+          %label.file-field
+            = f.file_field :image, class: 'file-field-button'
+            %i.fa.fa-picture-o
+          = f.submit 'SEND', class: 'submit-button', data: { disable_with: 'Sending' }
