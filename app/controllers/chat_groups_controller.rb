@@ -12,7 +12,7 @@ class ChatGroupsController < ApplicationController
   def create
     @group = ChatGroup.new(group_params)
     if @group.save
-      redirect_to root_path, notice: 'グループが作成されました'
+      redirect_to chat_group_messages_path(@group), notice: 'グループが作成されました'
     else
       render action: :new, object: @group, alert: 'グループが作成されませんでした'
     end
@@ -23,7 +23,7 @@ class ChatGroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to root_path, notice: 'グループが編集されました'
+      redirect_to chat_group_messages_path(@group), notice: 'グループが編集されました'
     else
       render action: :edit, object: @group, alert: 'グループが編集されませんでした'
     end
