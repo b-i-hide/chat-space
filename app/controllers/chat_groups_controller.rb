@@ -14,7 +14,8 @@ class ChatGroupsController < ApplicationController
     if @group.save
       redirect_to chat_group_messages_path(@group), notice: 'グループが作成されました'
     else
-      render action: :new, object: @group, alert: 'グループが作成されませんでした'
+      flash.now[:alert] = 'グループが作成されませんでした'
+      render action: :new, object: @group
     end
   end
 
@@ -25,7 +26,8 @@ class ChatGroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to chat_group_messages_path(@group), notice: 'グループが編集されました'
     else
-      render action: :edit, object: @group, alert: 'グループが編集されませんでした'
+      flash.now[:alert] = 'グループを編集できませんでした'
+      render action: :edit, object: @group
     end
   end
 

@@ -1,10 +1,10 @@
 class MessagesController < ApplicationController
   before_action :set_group, only: %w(index create)
   before_action :set_all_groups, only: %w(index create)
+  before_action :set_messages, only: %w(index create)
 
   def index
     @message = Message.new
-    @messages = Message.where(chat_group_id: params[:chat_group_id])
     @group = ChatGroup.find(params[:chat_group_id])
   end
 
@@ -14,7 +14,8 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to chat_group_messages_path(@group), notice: 'メッセージが投稿されました'
     else
-      render action: :index, object: @message, alert: 'メッセージが投稿されませんでした'
+      flash.now[:alert] = 'メッセージが投稿されませんでした'
+      render action: :index, object: @message
     end
   end
 
@@ -25,6 +26,10 @@ class MessagesController < ApplicationController
 
   def set_all_groups
     @groups = ChatGroup.all
+  end
+
+  def set_messages
+    @messages = Message.where(chat_group_id: params[:chat_group_id])
   end
 
   def message_params
