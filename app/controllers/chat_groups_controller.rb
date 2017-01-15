@@ -1,5 +1,5 @@
 class ChatGroupsController < ApplicationController
-  before_action :set_chat_group, only: [:edit, :update]
+  before_action :set_chat_group, only: %w(edit update)
 
   def index
     @groups = ChatGroup.all
