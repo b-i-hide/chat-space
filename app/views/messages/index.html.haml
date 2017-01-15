@@ -24,8 +24,6 @@
                 = message.body
     .chat__main--bottom
       = form_for @message, url: {action: :create} do |f|
-        = f.hidden_field :user_id, value: current_user.id
-        = f.hidden_field :chat_group_id, value: @group.id
         .chat__main--bottom-body
           = f.text_field :body, class: 'message-form', placeholder: 'type a message'
           %label.file-field
