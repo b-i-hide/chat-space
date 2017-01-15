@@ -8,7 +8,7 @@
         %p.group-info__member-list
           Members :
           - @group.users.each do |user|
-            = "#{user.name}"
+            = user.name
       = link_to 'Edit', edit_chat_group_path(@group), class: 'group_edit-button'
     .chat__main--middle
       .chat-contents
