@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to chat_group_messages_path(@group), notice: 'メッセージが投稿されました'
     else
-      flash.now[:alert] = 'メッセージが投稿されませんでした'
+      flash.now[:alert] = '投稿されませんでした'
       render action: :index, object: @message
     end
   end
