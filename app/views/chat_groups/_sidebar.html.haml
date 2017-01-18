@@ -1,0 +1,21 @@
+.chat__sidebar
+  .chat__user
+    .chat__user--name
+      %p
+        = current_user.name
+    .chat__user--actions
+      %a{ href: new_chat_group_path }
+        %i.fa.fa-pencil-square-o(style="margin-right: 5px;")
+      %a{ href: edit_user_registration_path }
+        %i.fa.fa-cog
+  %ul.chat__group-list
+    - @groups.each do |group|
+      %li.chat__group
+        %a{href: chat_group_messages_path(group)}
+          %p.chat__group--name
+            = group.name
+          %p.chat__group--latest-message
+            - if group.messages.last
+              = group.messages.last.body
+            - else
+              まだメッセージがありません

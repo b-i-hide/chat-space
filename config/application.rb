@@ -23,5 +23,8 @@ module ChatSpace
     # -- all .rb files in that directory are automatically loaded.
 
     config.i18n.default_locale = :ja
+
+    # validators
+    config.autoload_paths += Dir["#{config.root}/app/validators"]
   end
 end
