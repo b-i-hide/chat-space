@@ -12,7 +12,10 @@ class MessagesController < ApplicationController
     @user = current_user
     @message = Message.new(message_params)
     if @message.save
-      redirect_to chat_group_messages_path(@group), notice: 'メッセージが投稿されました'
+      respond_to do |format|
+        format.html { redirect_to chat_group_messages_path(@group), notice: 'メッセージが投稿されました' }
+        format.json
+      end
     else
       flash.now[:alert] = @message.errors[:body][0]
       render action: :index, object: @message
