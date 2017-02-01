@@ -19,8 +19,7 @@ $(function () {
 
   $('#js-form').on('submit',function (e) {
     e.preventDefault();
-    var jsForm = this;
-    var fd = new FormData(jsForm);
+    var fd = new FormData(this);
     var ajaxUrl = $('#js-form').attr('action');
     $.ajax({
       type: 'POST',
@@ -28,11 +27,12 @@ $(function () {
       data: fd,
       processData: false, // json形式でデータを渡すためにfalseに設定する
       contentType: false,　// ajax関数を使っているので、content-typeヘッダがデフォルト設定にならない様にする
-      dataType: 'json'
+      dataType: 'json',
+      context: this　// コールバック関数の中でformデータが入ったthisを使いたい
     })
     .done(function (data) {
       buildHTML(data);
-      jsForm.reset();
+      this.reset();
     })
     .fail(function() {
       alert('error');
