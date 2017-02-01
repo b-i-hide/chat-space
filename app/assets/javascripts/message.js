@@ -20,7 +20,7 @@ $(function () {
   $('#js-form').on('submit',function (e) {
     e.preventDefault();
     var fd = new FormData(this);
-    var ajaxUrl = $('#js-form').attr('action');
+    var ajaxUrl = $(this).attr('action');
     $.ajax({
       type: 'POST',
       url: ajaxUrl,
