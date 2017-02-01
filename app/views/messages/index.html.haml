@@ -23,10 +23,10 @@
               %p.message-body__content
                 = message.body
     .chat__main--bottom
-      = form_for @message, url: {action: :create} do |f|
+      = form_for @message, url: {action: :create}, html: { id: 'js-form' } do |f|
         .chat__main--bottom-body
           = f.text_field :body, class: 'message-form', placeholder: 'type a message'
           %label.file-field
             = f.file_field :image, class: 'file-field-button'
             %i.fa.fa-picture-o
-          = f.submit 'SEND', class: 'submit-button', data: { disable_with: 'Sending' }
+          = f.submit 'SEND', class: 'submit-button'
