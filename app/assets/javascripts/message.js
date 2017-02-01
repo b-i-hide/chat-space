@@ -17,26 +17,26 @@ $(function () {
     $('.chat-content').append(html);
   }
 
-  $('.js-form').on('submit',function (e) {
+  $('#js-form').on('submit',function (e) {
     e.preventDefault();
     var jsForm = this;
     var fd = new FormData(jsForm);
-    var ajaxUrl = $('.js-form').attr('action');
+    var ajaxUrl = $('#js-form').attr('action');
     $.ajax({
       type: 'POST',
-      url: ajaxUrl + '.json',
+      url: ajaxUrl,
       data: fd,
       processData: false, // json形式でデータを渡すためにfalseに設定する
-      contentType: false,　// ajax関数を使っているので、content-typeヘッダが自動で設定されない様にする
+      contentType: false,　// ajax関数を使っているので、content-typeヘッダがデフォルト設定にならない様にする
       dataType: 'json'
     })
     .done(function (data) {
       buildHTML(data);
       jsForm.reset();
-      $('.submit-button').attr('disabled', false);
     })
     .fail(function() {
       alert('error');
     });
+    return false
   });
 });
