@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :chat_groups, except: :destroy do
     resources :messages, only: [:index, :create]
   end
+  get '/user/search' => 'users#search'
 end
