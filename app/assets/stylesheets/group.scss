@@ -73,7 +73,6 @@
   }
 
   .chat-group-user {
-    padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
@@ -89,10 +88,12 @@
 
       &.chat-group-user__btn--add {
         color: #38aef0;
+        margin-right: 10px;
       }
 
       &.chat-group-user__btn--remove {
         color: #f05050;
+        margin-right: 10px;
       }
     }
   }
